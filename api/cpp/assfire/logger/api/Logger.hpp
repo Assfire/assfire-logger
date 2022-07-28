@@ -64,7 +64,7 @@ namespace assfire::logger {
             if (!level_enabled(level)) { return; }
 
             auto buf = fmt::memory_buffer();
-            fmt::format_to(buf, fmt, std::forward<Args>(args)...);
+            fmt::format_to(std::back_inserter(buf), fmt, std::forward<Args>(args)...);
 
             log_impl(level, LogStringView(buf.data(), buf.size()));
         }
