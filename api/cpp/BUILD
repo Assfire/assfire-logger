@@ -9,6 +9,7 @@ cc_library(
         "assfire/logger/api/Logger.hpp",
         "assfire/logger/api/LoggerFactory.hpp",
         "assfire/logger/api/LoggerProvider.hpp",
+        "assfire/logger/api/NullLogger.hpp",
     ],
     include_prefix = "assfire/logger/api",
     strip_include_prefix = "assfire/logger/api",
