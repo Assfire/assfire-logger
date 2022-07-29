@@ -1,4 +1,5 @@
 #include "LoggerProvider.hpp"
+#include "NullLogger.hpp"
 
 namespace assfire::logger {
 
@@ -22,6 +23,7 @@ namespace assfire::logger {
                     return instance;
                 }
             }
+            return std::make_shared<NullLogger>(); // Couldn't find any factory to create logger
         }
         return iter->second;
     }
